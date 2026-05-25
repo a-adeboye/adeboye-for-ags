@@ -243,23 +243,35 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(44,74,122,.4);paddi
 
 /* ── MOBILE ── */
 @media(max-width:900px){
-  nav{padding:.9rem 1.5rem}
+  html,body{overflow-x:hidden;max-width:100vw}
+  nav{padding:.9rem 1.2rem}
   .nav-links{display:none}
-  .hero{grid-template-columns:1fr;padding:6rem 1.5rem 3rem;gap:3rem;min-height:auto}
+  .nav-brand{font-size:1rem}
+  .nav-wa{font-size:.58rem;padding:.45rem .9rem}
+  .hero{grid-template-columns:1fr;padding:6rem 1.2rem 3rem;gap:2rem;min-height:auto}
   .hero-right{order:-1}
-  .photo-wrap{width:220px}
-  .photo-img{height:280px}
-  .cd-inner{grid-template-columns:1fr;gap:2rem}
-  .cd-clock{justify-content:center}
+  .photo-wrap{width:200px;margin:0 auto}
+  .photo-img{height:260px}
+  .hero-name{font-size:clamp(3rem,12vw,5rem)}
+  .hero-desc{max-width:100%}
+  .hero-btns{flex-direction:column;align-items:flex-start}
+  .cd-inner{grid-template-columns:1fr;gap:1.5rem}
+  .cd-clock{justify-content:center;gap:.6rem}
+  .cu{min-width:54px}
+  .cn{font-size:clamp(2rem,8vw,3.5rem)}
+  .csep{font-size:2rem}
   .flyer-grid,.sys-grid{grid-template-columns:1fr}
   .const-grid{grid-template-columns:1fr}
-  #flyer,#mandate,#plans,#system{padding:3rem 1.5rem}
-  .sec-div{padding:3.5rem 1.5rem 0}
+  #flyer,#mandate,#plans,#system{padding:3rem 1.2rem}
+  .sec-div{padding:3rem 1.2rem 0}
   .ft-inner{grid-template-columns:1fr;text-align:center}
   .ft-logos{justify-content:center}
   .ft-copy{text-align:center}
-  .pi{grid-template-columns:60px 1fr}
+  .pi{grid-template-columns:54px 1fr}
   .pi-status{display:none}
+  .sys-card{overflow-x:hidden}
+  .mod-grid{grid-template-columns:1fr 1fr}
+  .s-heading{font-size:clamp(1.8rem,7vw,2.8rem)}
 }
 </style>
 </head>
@@ -426,7 +438,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(44,74,122,.4);paddi
 <section id="plans">
   <div class="section-wrap">
     <div class="reveal">
-      <div class="s-tag">Five Plans</div>
+      <div class="s-tag">Six Plans</div>
       <h2 class="s-heading">WHAT I AM DOING</h2>
       <p class="s-body" style="max-width:580px">Each plan is grounded in my constitutional duties and is already being worked on &#8212; not merely proposed. I believe in demonstrating commitment before asking for trust.</p>
     </div>
@@ -463,13 +475,21 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(44,74,122,.4);paddi
         </div>
         <div class="pi-status"><span class="sb sb-prog">In Progress</span></div>
       </div>
-      <div class="pi" style="border-bottom:none">
+      <div class="pi">
         <div class="pi-num"><span class="pi-n">05</span></div>
         <div class="pi-body">
           <div class="pi-title">CONTINUITY&#8209;DRIVEN HANDOVER</div>
           <div class="pi-desc">The most important metric of any administration is what it leaves behind. Every system I build will be fully documented, portable, and designed for a clean handover &#8212; so the incoming AGS is fully operational within 30 minutes, not 30 days.</div>
         </div>
         <div class="pi-status"><span class="sb sb-live">&#10022; Live</span></div>
+      </div>
+      <div class="pi" style="border-bottom:none">
+        <div class="pi-num"><span class="pi-n">06</span></div>
+        <div class="pi-body">
+          <div class="pi-title">FRESHERS ONBOARDING &amp; INTEGRATION</div>
+          <div class="pi-desc">Collaborating with the Vice President to ensure a smooth transition and proper integration of incoming 100&#8209;Level students into NIMechE&#8209;UI. This includes structured orientation, proper sensitisation on NIMechE-UI benefits and structure, induction into the member database, and controlled access to the NIMechE&#8209;UI Public Archives &#8212; specifically the 100L educational materials folder &#8212; via the Nextcloud portal.</div>
+        </div>
+        <div class="pi-status"><span class="sb sb-prog">Planned</span></div>
       </div>
     </div>
   </div>
@@ -483,30 +503,30 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(44,74,122,.4);paddi
       <div>
         <div class="s-tag">Already Built &nbsp;&#183;&nbsp; Already Running</div>
         <h2 class="s-heading">THE LIVE SYSTEM</h2>
-        <p class="s-body" style="margin-bottom:1.2rem">I have personally designed, built, and deployed a live administrative coordination system for NIMechE&#8209;UI &#8212; currently running on a dedicated server, accessible from any device with a browser. This is not a concept. It is operational today.</p>
-        <p class="s-body" style="margin-bottom:2rem">The system covers all five modules of the AGS constitutional mandate &#8212; from meeting management to member database, from task tracking to automated email reminders for executive deliverables.</p>
+        <p class="s-body" style="margin-bottom:1.2rem">I have personally designed, configured, and deployed a self-hosted <strong>Nextcloud</strong> instance for NIMechE&#8209;UI &#8212; running live on Microsoft Azure, accessible from any device at <strong>nimecheui.francecentral.cloudapp.azure.com</strong>. This is not a concept. It is operational today.</p>
+        <p class="s-body" style="margin-bottom:2rem">The portal provides structured team folders with role-based access control, 20&nbsp;GB of educational archives for students, internal messaging via Talk, task and calendar management, and a 10-folder filing system purpose-built for NIMechE-UI &#8212; designed for complete handover in under 30 minutes.</p>
         <div style="display:flex;gap:.8rem;flex-wrap:wrap">
-          <a class="btn-gold" href="http://102.133.145.149:3456" target="_blank" rel="noopener" style="font-size:.74rem">View Live System &#8594;</a>
+          <a class="btn-gold" href="https://nimecheui.francecentral.cloudapp.azure.com" target="_blank" rel="noopener" style="font-size:.74rem">View NIMechE-UI Portal &#8594;</a>
           <a class="btn-ghost" href="https://chat.whatsapp.com/Gcvs8YNTpDE7QUfKlSEy0S" target="_blank" rel="noopener" style="font-size:.74rem">Join Campaign</a>
         </div>
       </div>
       <div class="sys-card">
         <div class="sys-bar">
           <div class="dot dr"></div><div class="dot dy"></div><div class="dot dg"></div>
-          <div class="sys-url">NIMechE&#8209;UI Admin System &nbsp;&#183;&nbsp; 102.133.145.149:3456</div>
+          <div class="sys-url">nimecheui.francecentral.cloudapp.azure.com &nbsp;&#183;&nbsp; Nextcloud</div>
           <div class="ldot"></div>
         </div>
         <div class="sys-body">
           <div class="mod-grid">
-            <div class="mod"><div class="mod-ic">&#128197;</div><div class="mod-n">Meeting Management</div><div class="mod-c"><span>3</span> scheduled</div></div>
-            <div class="mod"><div class="mod-ic">&#9989;</div><div class="mod-n">Task Tracker</div><div class="mod-c"><span>8</span> active tasks</div></div>
-            <div class="mod"><div class="mod-ic">&#128276;</div><div class="mod-n">Reminders</div><div class="mod-c"><span>2</span> due today</div></div>
-            <div class="mod"><div class="mod-ic">&#128193;</div><div class="mod-n">Documentation</div><div class="mod-c"><span>11</span> documents</div></div>
+            <div class="mod"><div class="mod-ic">&#128193;</div><div class="mod-n">Team Folders</div><div class="mod-c"><span>10</span> configured</div></div>
+            <div class="mod"><div class="mod-ic">&#128100;</div><div class="mod-n">User Groups</div><div class="mod-c"><span>5</span> groups</div></div>
+            <div class="mod"><div class="mod-ic">&#128218;</div><div class="mod-n">Public Archives</div><div class="mod-c"><span>20 GB</span> quota</div></div>
+            <div class="mod"><div class="mod-ic">&#128172;</div><div class="mod-n">Talk</div><div class="mod-c"><span>Live</span> comms</div></div>
           </div>
           <div class="tl">
-            <div class="ti"><div class="td td-r"></div><span class="tt">Archive Executive Minutes &#8212; Session 1</span><span class="tdu">Today</span></div>
-            <div class="ti"><div class="td td-y"></div><span class="tt">Compile 100L&#8211;500L Member Database</span><span class="tdu">May 30</span></div>
-            <div class="ti"><div class="td td-g"></div><span class="tt">SRC Constitution Review &#8212; Filed &#10003;</span><span class="tdu">Done</span></div>
+            <div class="ti"><div class="td td-r"></div><span class="tt">01_Secretariat (Minutes &amp; Communiqu&#233;s)</span><span class="tdu">Exec only</span></div>
+            <div class="ti"><div class="td td-y"></div><span class="tt">NIMechE UI Public Archives &mdash; 100L access live</span><span class="tdu">Students</span></div>
+            <div class="ti"><div class="td td-g"></div><span class="tt">05_Handover Documents &mdash; Ready &#10003;</span><span class="tdu">Admin</span></div>
           </div>
         </div>
       </div>
